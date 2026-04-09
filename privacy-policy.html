@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – CrossX Campaign Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #050a0f;
+      --surface: #0c1219;
+      --border: #1a2530;
+      --accent: #25f4ee;
+      --accent2: #fe2c55;
+      --text: #e8f4f8;
+      --muted: #6a8a9a;
+      --mono: 'IBM Plex Mono', monospace;
+      --sans: 'Sora', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(37, 244, 238, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 244, 238, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header */
+    header {
+      background: rgba(12, 18, 25, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .header-badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 0 12px rgba(37, 244, 238, 0.15);
+    }
+    nav a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 2rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero::before {
+      content: 'PP';
+      position: absolute;
+      top: 2rem; right: 0;
+      font-family: var(--mono);
+      font-size: 10rem;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.03;
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      user-select: none;
+    }
+    .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px rgba(37, 244, 238, 0.12);
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    h1 span { color: var(--accent); }
+    .meta {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), transparent);
+      margin: 2.5rem 0;
+      opacity: 0.4;
+    }
+
+    /* Content */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    .data-table th {
+      background: rgba(37, 244, 238, 0.07);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: #bcd;
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(37,244,238,0.03); }
+
+    .section {
+      margin-bottom: 2.5rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+      z-index: 1;
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    p { color: #9ab; margin-bottom: 0.8rem; }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      color: #9ab;
+    }
+    ul li {
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+      top: 0.45rem;
+    }
+    a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent); }
+    a.inline:hover { color: var(--accent2); border-color: var(--accent2); }
+
+    /* Highlight box */
+    .highlight-box {
+      background: rgba(37, 244, 238, 0.05);
+      border: 1px solid rgba(37, 244, 238, 0.2);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+    }
+    .highlight-box p { color: #8cc; font-size: 0.9rem; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { color: var(--accent2); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-dot"></div>
+    CrossX Campaign Tool
+  </div>
+  <nav>
+    <a href="terms-of-service.html">Terms</a>
+    <a href="privacy-policy.html">Privacy</a>
+  </nav>
+  <span class="header-badge">TikTok API</span>
+</header>
+
+<div class="hero">
+  <div class="tag">Legal</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p style="color:#7a9aaa; max-width:600px;">We are committed to protecting your personal information. This policy explains what data we collect, how we use it, and your rights regarding your data — including data accessed through the TikTok API.</p>
+  <div class="meta">Last Updated: April 8, 2026 &nbsp;·&nbsp; Effective: April 8, 2026</div>
+  <div class="divider"></div>
+</div>
+
+<div class="content">
+
+  <div class="section" style="animation-delay:0.05s">
+    <div class="section-num">Section 01</div>
+    <h2>Introduction</h2>
+    <p>Linger Co ("we," "our," or "us") operates <strong>CrossX Campaign Tool</strong> (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App, including any information obtained through TikTok's API via your authorized consent.</p>
+    <p>By using our App, you agree to the collection and use of information in accordance with this policy. If you do not agree, please discontinue use of the App.</p>
+    <div class="highlight-box">
+      <p>⚡ We only access TikTok data that you explicitly authorize. We do not sell your data to third parties.</p>
+    </div>
+  </div>
+
+  <div class="section" style="animation-delay:0.1s">
+    <div class="section-num">Section 02</div>
+    <h2>Information We Collect</h2>
+    <p>We collect the following categories of information to operate the Service:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Source</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account Info (name, email)</td>
+          <td>User registration</td>
+          <td>Account creation & communication</td>
+        </tr>
+        <tr>
+          <td>TikTok Profile Data</td>
+          <td>TikTok API (authorized)</td>
+          <td>Provide app functionality</td>
+        </tr>
+        <tr>
+          <td>TikTok Content Data</td>
+          <td>TikTok API (authorized)</td>
+          <td>Display & analyze your content</td>
+        </tr>
+        <tr>
+          <td>Usage & Analytics</td>
+          <td>App interaction</td>
+          <td>Improve the Service</td>
+        </tr>
+        <tr>
+          <td>Device & Log Data</td>
+          <td>Automatic collection</td>
+          <td>Security & debugging</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section" style="animation-delay:0.15s">
+    <div class="section-num">Section 03</div>
+    <h2>TikTok API Data</h2>
+    <p>Our App integrates with TikTok's official API. When you authorize our App to connect with your TikTok account, we may access:</p>
+    <ul>
+      <li>Your TikTok public profile information (username, display name, avatar)</li>
+      <li>Your TikTok videos and related metadata (as authorized)</li>
+      <li>Analytics and performance data for your content (as authorized)</li>
+      <li>Comments and engagement data (as authorized)</li>
+      <li>View basic profile info, video list, and campaign analytics</li>
+    </ul>
+    <p style="margin-top:1rem;">We access <strong>only the scopes you explicitly approve</strong> during the TikTok OAuth authorization flow. You may revoke access at any time through your TikTok account settings at <a class="inline" href="https://www.tiktok.com/settings/connected-apps" target="_blank">TikTok Connected Apps</a>.</p>
+    <p>TikTok API data is used solely to provide the features of this App. We do not use it for advertising, profiling, or sale to third parties.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.2s">
+    <div class="section-num">Section 04</div>
+    <h2>How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, maintain, and improve our Service</li>
+      <li>Authenticate you and manage your account</li>
+      <li>Display and process TikTok data you have authorized us to access</li>
+      <li>Send transactional communications (e.g., account notices, security alerts)</li>
+      <li>Monitor and analyze usage patterns to enhance the user experience</li>
+      <li>Detect, investigate, and prevent fraudulent or unauthorized activity</li>
+      <li>Comply with legal obligations</li>
+    </ul>
+  </div>
+
+  <div class="section" style="animation-delay:0.25s">
+    <div class="section-num">Section 05</div>
+    <h2>Data Sharing & Disclosure</h2>
+    <p>We do not sell, trade, or rent your personal information. We may share your information only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Service Providers:</strong> Trusted third-party vendors who assist in operating our Service (e.g., cloud hosting, analytics), bound by confidentiality agreements</li>
+      <li><strong>Legal Compliance:</strong> When required by law, subpoena, or other legal process</li>
+      <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets (you will be notified)</li>
+      <li><strong>With Your Consent:</strong> For any other purpose with your explicit consent</li>
+    </ul>
+    <p style="margin-top:1rem;">TikTok API data is never shared with third parties beyond what is necessary to operate the Service and what is permitted under TikTok's Developer Terms.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.3s">
+    <div class="section-num">Section 06</div>
+    <h2>Data Retention & Deletion</h2>
+    <p>We retain your personal data only for as long as necessary to provide the Service and fulfill the purposes described in this policy, or as required by law.</p>
+    <ul>
+      <li>Account data is retained for the duration of your account plus 30 days after deletion</li>
+      <li>TikTok API data is cached only for 7 days to enable App functionality</li>
+      <li>Log and analytics data may be retained for up to 12 months for security purposes</li>
+    </ul>
+    <p style="margin-top:1rem;">You may request deletion of your data at any time by contacting us at <a class="inline" href="mailto:Cryptostoner94@gmail.com">Cryptostoner94@gmail.com</a> or by deleting your account within the App. Upon deletion, we will remove or anonymize your data within 30 days.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.35s">
+    <div class="section-num">Section 07</div>
+    <h2>Data Security</h2>
+    <p>We implement industry-standard technical and organizational measures to protect your information, including:</p>
+    <ul>
+      <li>TLS/SSL encryption for all data in transit</li>
+      <li>Encryption at rest for sensitive stored data</li>
+      <li>Access controls limiting data access to authorized personnel only</li>
+      <li>Regular security assessments and audits</li>
+      <li>We do not store TikTok passwords — authentication uses TikTok's OAuth 2.0 standard</li>
+    </ul>
+    <p style="margin-top:1rem;">No method of transmission over the Internet is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee absolute security.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.4s">
+    <div class="section-num">Section 08</div>
+    <h2>Your Rights</h2>
+    <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+      <li><strong>Rectification:</strong> Request correction of inaccurate or incomplete data</li>
+      <li><strong>Erasure:</strong> Request deletion of your personal data ("right to be forgotten")</li>
+      <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format</li>
+      <li><strong>Objection:</strong> Object to processing of your data for certain purposes</li>
+      <li><strong>Withdraw Consent:</strong> Revoke TikTok API authorization at any time via TikTok's settings</li>
+    </ul>
+    <p style="margin-top:1rem;">To exercise these rights, contact us at <a class="inline" href="mailto:Cryptostoner94@gmail.com">Cryptostoner94@gmail.com</a>. We will respond within 30 days.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.45s">
+    <div class="section-num">Section 09</div>
+    <h2>Cookies & Tracking</h2>
+    <p>We use cookies and similar tracking technologies to enhance your experience. These include:</p>
+    <ul>
+      <li><strong>Essential cookies:</strong> Required for the App to function (session management, authentication)</li>
+      <li><strong>Analytics cookies:</strong> Help us understand how users interact with the App (e.g., page views, feature usage)</li>
+      <li><strong>Preference cookies:</strong> Remember your settings and preferences</li>
+    </ul>
+    <p style="margin-top:1rem;">You can control cookies through your browser settings. Disabling certain cookies may affect App functionality.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.5s">
+    <div class="section-num">Section 10</div>
+    <h2>Children's Privacy</h2>
+    <p>Our Service is not directed to children under the age of 13 (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us immediately at <a class="inline" href="mailto:Cryptostoner94@gmail.com">Cryptostoner94@gmail.com</a> and we will take steps to delete it.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.55s">
+    <div class="section-num">Section 11</div>
+    <h2>Third-Party Links</h2>
+    <p>Our App may contain links to third-party websites, including TikTok's own platform. We are not responsible for the privacy practices of those websites. We encourage you to review the privacy policies of any third-party sites you visit, including <a class="inline" href="https://www.tiktok.com/legal/privacy-policy" target="_blank">TikTok's Privacy Policy</a>.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.6s">
+    <div class="section-num">Section 12</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date at the top of this page and, for material changes, notify you via email or a prominent notice within the App. Your continued use of the Service after changes constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.65s">
+    <div class="section-num">Section 13</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Privacy team:</p>
+    <ul>
+      <li>Email: <a class="inline" href="/cdn-cgi/l/email-protection#f484869d8295978db48d9b8186958484da979b99"><span class="__cf_email__" data-cfemail="d0a0a2b9a6b1b3a990a9bfa5a2

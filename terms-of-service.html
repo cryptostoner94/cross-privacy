@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service – CrossX Campaign Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #222222;
+      --accent: #fe2c55;
+      --accent2: #25f4ee;
+      --text: #f0f0f0;
+      --muted: #888;
+      --mono: 'IBM Plex Mono', monospace;
+      --sans: 'Sora', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .header-badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent2);
+      border: 1px solid var(--accent2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    nav a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent2); }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 2rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero::before {
+      content: 'TOS';
+      position: absolute;
+      top: 2rem; right: 0;
+      font-family: var(--mono);
+      font-size: 8rem;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.04;
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      user-select: none;
+    }
+    .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    h1 span { color: var(--accent2); }
+    .meta {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), transparent);
+      margin: 2.5rem 0;
+      opacity: 0.4;
+    }
+
+    /* Content */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+    .section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    p { color: #ccc; margin-bottom: 0.8rem; }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+      color: #ccc;
+    }
+    ul li {
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-size: 0.7rem;
+      top: 0.45rem;
+    }
+    a.inline { color: var(--accent2); text-decoration: none; border-bottom: 1px dashed var(--accent2); }
+    a.inline:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-dot"></div>
+    CrossX Campaign Tool
+  </div>
+  <nav>
+    <a href="terms-of-service.html">Terms</a>
+    <a href="privacy-policy.html">Privacy</a>
+  </nav>
+  <span class="header-badge">TikTok API</span>
+</header>
+
+<div class="hero">
+  <div class="tag">Legal</div>
+  <h1>Terms of <span>Service</span></h1>
+  <p style="color:#aaa; max-width:600px;">Please read these terms carefully before using our application. By accessing or using this service, you agree to be bound by the following terms and conditions.</p>
+  <div class="meta">Last Updated: April 8, 2026 &nbsp;·&nbsp; Effective: April 8, 2026</div>
+  <div class="divider"></div>
+</div>
+
+<div class="content">
+
+  <div class="section" style="animation-delay:0.05s">
+    <div class="section-num">Section 01</div>
+    <h2>Acceptance of Terms</h2>
+    <p>By accessing or using <strong>CrossX Campaign Tool</strong> ("the App," "Service," or "we"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using this Service.</p>
+    <p>These terms apply to all users, visitors, and others who access or use the Service, including any integration with the TikTok API or TikTok for Developers platform.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.1s">
+    <div class="section-num">Section 02</div>
+    <h2>Description of Service</h2>
+    <p>CrossX Campaign Tool is a cross-platform social media campaign management tool that connects to the TikTok platform via TikTok's official API. Through our Service, users may:</p>
+    <ul>
+      <li>Connect their TikTok account to access authorized data</li>
+      <li>View, manage, and analyze TikTok campaign content as permitted by TikTok's API Terms</li>
+      <li>Plan and coordinate cross-platform social media campaigns</li>
+      <li>Receive analytics and insights derived from authorized TikTok data</li>
+    </ul>
+    <p>Our use of TikTok API data is governed by <a class="inline" href="https://developers.tiktok.com/terms" target="_blank">TikTok's Developer Terms of Service</a> and our integration is subject to their review and approval.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.15s">
+    <div class="section-num">Section 03</div>
+    <h2>TikTok API Usage</h2>
+    <p>Our App uses TikTok's official API to provide its services. In using our App, you acknowledge that:</p>
+    <ul>
+      <li>You must hold a valid TikTok account and comply with TikTok's own Terms of Service</li>
+      <li>We access only the TikTok data scopes that you expressly authorize via OAuth</li>
+      <li>TikTok may revoke API access or change data availability at any time</li>
+      <li>We do not store TikTok credentials; authentication is handled directly by TikTok's OAuth flow</li>
+      <li>Data retrieved from TikTok is used solely to provide the features you have requested</li>
+    </ul>
+  </div>
+
+  <div class="section" style="animation-delay:0.2s">
+    <div class="section-num">Section 04</div>
+    <h2>User Accounts & Responsibilities</h2>
+    <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to:</p>
+    <ul>
+      <li>Provide accurate and complete registration information</li>
+      <li>Notify us immediately of any unauthorized use of your account</li>
+      <li>Not use the Service for any unlawful or prohibited purpose</li>
+      <li>Not attempt to gain unauthorized access to any portion of the Service</li>
+      <li>Comply with all applicable local, national, and international laws and regulations</li>
+    </ul>
+  </div>
+
+  <div class="section" style="animation-delay:0.25s">
+    <div class="section-num">Section 05</div>
+    <h2>Prohibited Uses</h2>
+    <p>You may not use our Service to:</p>
+    <ul>
+      <li>Violate TikTok's Community Guidelines or Developer Terms of Service</li>
+      <li>Harvest, scrape, or collect data beyond what is authorized through TikTok's API</li>
+      <li>Engage in any activity that could harm, disable, or overburden our Service or TikTok's infrastructure</li>
+      <li>Impersonate any person or entity or misrepresent your affiliation</li>
+      <li>Distribute spam, malware, or engage in fraudulent activities</li>
+      <li>Reverse engineer or attempt to extract source code from the App</li>
+    </ul>
+  </div>
+
+  <div class="section" style="animation-delay:0.3s">
+    <div class="section-num">Section 06</div>
+    <h2>Intellectual Property</h2>
+    <p>The Service and its original content, features, and functionality are owned by Linger Co and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+    <p>Content retrieved from TikTok through the API remains the property of its respective owners and is subject to TikTok's terms. We claim no ownership over TikTok user content.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.35s">
+    <div class="section-num">Section 07</div>
+    <h2>Disclaimer of Warranties</h2>
+    <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied. We do not warrant that the Service will be uninterrupted, secure, or error-free, or that results obtained from use of the Service will be accurate or reliable.</p>
+    <p>We are not responsible for any disruptions to the Service caused by changes to TikTok's API, platform policies, or data availability.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.4s">
+    <div class="section-num">Section 08</div>
+    <h2>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, Linger Co shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation loss of profits, data, or goodwill, arising out of or in connection with your use of or inability to use the Service.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.45s">
+    <div class="section-num">Section 09</div>
+    <h2>Termination</h2>
+    <p>We may terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason, including if you breach these Terms. Upon termination, your right to use the Service will cease immediately and we will delete or anonymize your data in accordance with our Privacy Policy.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.5s">
+    <div class="section-num">Section 10</div>
+    <h2>Changes to Terms</h2>
+    <p>We reserve the right to modify or replace these Terms at any time. We will provide notice of significant changes by updating the "Last Updated" date at the top of this page. Your continued use of the Service after any changes constitutes acceptance of the new Terms.</p>
+  </div>
+
+  <div class="section" style="animation-delay:0.55s">
+    <div class="section-num">Section 11</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <ul>
+      <li>Email: <a class="inline" href="mailto:Cryptostoner94@gmail.com">Cryptostoner94@gmail.com</a></li>
+      <li>Website: <a class="inline" href="#">https://crypto-stoner.com</a></li>
+      <li>Address: 2755 Columbia Street, Vancouver, BC V5Y 3G4, Canada</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Linger Co · <a href="terms-of-service.html">Terms of Service</a> · <a href="privacy-policy.html">Privacy Policy</a>
+  <br><br>
+  This applicatio
